@@ -22,50 +22,45 @@
     <title>Cheezious</title>
   </head>
   <body>
-    <!-- sidebar containers-->
-    <div class="underlay w-100 min-vh-100 top-0 position-fixed z-3">
-      <!-- sidebar -->
-      <div
-        class="sidebar position-relative bg-white min-vh-100 p-5 col-xl-4 col-lg-4 col-md-5 col-sm-6 col-8"
-      >
+    <!-- underlay + sidebar -->
+    <div class="underlay" id="underlay">
+      <aside class="sidebar" id="sidebar">
         <div
-          class="profile d-flex gap-2 align-items-center justify-content-center"
+          class="profile d-flex gap-2 align-items-center justify-content-start mb-3"
         >
           <div
-            style="width: 50px; height: 50px"
-            class="p-left bg-warning fs-2 rounded-circle d-flex justify-content-center align-items-center"
+            class="p-left d-flex justify-content-center align-items-center rounded-circle bg-warning"
           >
             <i class="bi bi-person"></i>
           </div>
           <div class="p-right">
-            <p>Login to explore</p>
-            <h6>World of flavors</h6>
+            <p class="mb-0">Login to explore</p>
+            <h6 class="mb-0">World of flavors</h6>
           </div>
         </div>
 
         <button
-          class="btn btn-outline-warning text-dark rounded-2 text-uppercase px-4 my-3"
+          class="btn btn-outline-warning text-dark rounded-2 text-uppercase px-4 my-3 w-100"
         >
           login
         </button>
         <hr />
 
-        <ul class="list-unstyled">
-          <li class="d-flex gap-4 fw-semibold">
-            <i class="bi bi-grid"></i>
-            Explore Menu
+        <ul class="list-unstyled mb-3">
+          <li class="d-flex gap-3 fw-semibold align-items-center mb-3">
+            <i class="bi bi-grid"></i> Explore Menu
           </li>
-          <li class="d-flex gap-4 fw-semibold my-4">
-            <i class="bi bi-shop"></i>
-            Branch Locator
+          <li class="d-flex gap-3 fw-semibold align-items-center">
+            <i class="bi bi-shop"></i> Branch Locator
           </li>
         </ul>
-        <hr />
 
-        <ul class="list-unstyled fw-semibold">
+        <hr />
+        <ul class="list-unstyled fw-semibold mb-0">
           <li>Blog</li>
           <li class="my-3">Privacy Policy</li>
         </ul>
+
         <div
           class="sidebar-footer bg-warning w-100 position-absolute bottom-0 start-0 p-3"
         >
@@ -73,36 +68,36 @@
             class="footer-content d-flex justify-content-center align-items-center gap-3"
           >
             <img
-              width="40px"
+              width="40"
               src="https://blinkco.io/wp-content/uploads/2024/09/Cheezious-1-1024x1024.png"
-              alt=""
+              alt="logo"
             />
-            <h6>Cheezious Hotline</h6>
+            <h6 class="mb-0">Cheezious Hotline</h6>
             <i class="bi bi-telephone-forward-fill"></i>
           </div>
         </div>
-      </div>
+      </aside>
     </div>
 
     <!-- navbar -->
     <div class="nav-bar p-3 d-flex justify-content-between align-items-center">
-      <div class="left d-flex gap-3">
-        <div class="list-icon">
+      <div class="left d-flex gap-3 align-items-center">
+        <div class="list-icon" id="listIcon">
           <img
-            width="35px"
+            width="35"
             src="https://cheezious.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstack.54881ee4.png&w=256&q=75"
-            alt=""
+            alt="menu"
           />
         </div>
         <div class="logo">
           <img
-            width="150px"
+            width="150"
             src="https://cheezious.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FmainLogo.c4a33b22.png&w=1200&q=75"
-            alt=""
+            alt="logo"
           />
         </div>
       </div>
-      <div class="right d-flex">
+      <div class="right d-flex gap-2">
         <button
           class="btn bg-warning text-dark text-uppercase border rounded-3 px-4"
         >
@@ -116,161 +111,71 @@
       </div>
     </div>
 
-    <!-- hero section or kind of slider -->
-    <div class="images">
-      <img
-        class="hero-images hero-image1"
-        width="100%"
-        height="400px"
-        src="./images/image1.png"
-        alt=""
-      />
-      <img
-        class="hero-images"
-        width="100%"
-        height="400px"
-        src="./images/image2.jpg"
-        alt=""
-      />
-      <img
-        class="hero-images"
-        width="100%"
-        height="400px"
-        src="./images/image3.jpg"
-        alt=""
-      />
-      <img
-        class="hero-images"
-        width="100%"
-        height="400px"
-        src="./images/image4.jpg"
-        alt=""
-      />
-      <img
-        class="hero-images"
-        width="100%"
-        height="400px"
-        src="./images/image5.jpg"
-        alt=""
-      />
+    <!-- hero slider -->
+    <div class="images container px-0">
+      <img class="hero-images active" src="./images/image1.png" alt="" />
+      <img class="hero-images" src="./images/image2.jpg" alt="" />
+      <img class="hero-images" src="./images/image3.jpg" alt="" />
+      <img class="hero-images" src="./images/image4.jpg" alt="" />
+      <img class="hero-images" src="./images/image5.jpg" alt="" />
     </div>
 
-    <!-- explore menu -->
-    <div class="container explore p-xl-4 p-3">
-      <div class="d-flex justify-content-between align-items-center">
+    <!-- explore -->
+    <div class="container explore">
+      <div class="d-flex justify-content-between align-items-center mb-2">
         <h2>Explore Menu</h2>
         <h6 class="text-warning text-uppercase">View All</h6>
       </div>
-      <div
-        class="cards explore-scroll d-flex gap-3 overflow-x-scroll p-2 justify-content-center align-items-center"
-      >
-        <i class="bi bi-chevron-right"></i>
-        <i class="bi bi-chevron-left"></i>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
+
+      <!-- arrows (siblings of scroll container so they don't scroll) -->
+      <i class="bi bi-chevron-left explore-left-arrow"></i>
+      <i class="bi bi-chevron-right explore-right-arrow"></i>
+
+      <!-- scrollable cards -->
+      <div class="cards explore-scroll d-flex gap-3 overflow-x-scroll p-2">
+        <!-- example cards -->
+        <div class="card flex-shrink-0 shadow border border-warning p-2">
           <img
             src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240888634-Starters.jpg&w=640&q=75"
             alt=""
           />
-
-          <p class="text-uppercase fw-semibold">starters</p>
+          <p class="text-uppercase fw-semibold mb-0">starters</p>
         </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
+        <div class="card flex-shrink-0 shadow border border-warning p-2">
           <img
-            width="100%"
             src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240904749-Somewhat%20Local.jpg&w=640&q=75"
             alt=""
           />
-
-          <p class="text-uppercase fw-semibold">somewhat locals</p>
+          <p class="text-uppercase fw-semibold mb-0">somewhat locals</p>
         </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
+        <div class="card flex-shrink-0 shadow border border-warning p-2">
           <img
-            width="100%"
             src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240920275-Somewhat%20Sooper.jpg&w=640&q=75"
             alt=""
           />
-
-          <p class="text-uppercase fw-semibold">somewhat soopers</p>
+          <p class="text-uppercase fw-semibold mb-0">somewhat soopers</p>
         </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
+        <!-- replicate cards to test scroll -->
+        <div class="card flex-shrink-0 shadow border border-warning p-2">
           <img
-            width="100%"
             src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240931872-Cheezy%20Treats.jpg&w=640&q=75"
             alt=""
           />
-
-          <p class="text-uppercase fw-semibold">cheezy treats</p>
+          <p class="mb-0 text-uppercase fw-semibold">cheezy treats</p>
         </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
+        <div class="card flex-shrink-0 shadow border border-warning p-2">
           <img
-            width="100%"
             src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240943329-Pizza%20Deals.jpg&w=640&q=75"
             alt=""
           />
-          <p class="text-uppercase fw-semibold">pizza deals</p>
+          <p class="mb-0 text-uppercase fw-semibold">pizza deals</p>
         </div>
-        <div class="card flex-shrink-0 shadow border border-warning border-2">
+        <div class="card flex-shrink-0 shadow border border-warning p-2">
           <img
-            width="100%"
             src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240954045-Sandwiches%20%26%20Platters.jpg&w=640&q=75"
             alt=""
           />
-
-          <p class="text-uppercase fw-semibold">sandwiches and platters</p>
-        </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
-          <img
-            width="100%"
-            src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240888634-Starters.jpg&w=640&q=75"
-            alt=""
-          />
-
-          <p class="text-uppercase fw-semibold">starters</p>
-        </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
-          <img
-            width="100%"
-            src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240888634-Starters.jpg&w=640&q=75"
-            alt=""
-          />
-
-          <p class="text-uppercase fw-semibold">starters</p>
-        </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
-          <img
-            width="100%"
-            src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240888634-Starters.jpg&w=640&q=75"
-            alt=""
-          />
-
-          <p class="text-uppercase fw-semibold">starters</p>
-        </div>
-        <div
-          class="card flex-shrink-0 shadow border border-warning border-2 p-2"
-        >
-          <img
-            width="100%"
-            src="https://cheezious.com/_next/image?url=https%3A%2F%2Fs3-me-south-1.amazonaws.com%2Fcz-content-prod%2Fcategories%2F1724240888634-Starters.jpg&w=640&q=75"
-            alt=""
-          />
-
-          <p class="text-uppercase fw-semibold">starters</p>
+          <p class="mb-0 text-uppercase fw-semibold">sandwiches</p>
         </div>
       </div>
     </div>

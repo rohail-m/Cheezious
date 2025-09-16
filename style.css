@@ -1,31 +1,120 @@
-.list-icon {
-  cursor: pointer;
-}
-
 .underlay {
-  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
   visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s;
+  z-index: 900;
+  display: flex;
+  justify-content: flex-start; /* sidebar at left */
+}
+.underlay.show {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .sidebar {
+  width: 320px;
+  max-width: 85%;
+  background-color: #fff;
+  min-height: 100vh;
   transform: translateX(-100%);
-  transition: all 0.4s ease-in-out;
+  transition: transform 0.35s ease;
+  padding: 1.5rem;
+  box-shadow: 2px 0 18px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.sidebar.open {
+  transform: translateX(0);
 }
 
+/* profile */
+.p-left {
+  width: 50px;
+  height: 50px;
+}
+.p-left i {
+  font-size: 1.25rem;
+}
+
+/* sidebar footer */
+.sidebar-footer {
+  background: #ffdd00;
+}
+
+/* ---------- hero slider ---------- */
+.images {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
 .hero-images {
   position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0;
-  transition: all 0.2s ease;
+  transition: opacity 0.6s ease;
 }
-
-.hero-image1 {
-  z-index: 22;
+.hero-images.active {
   opacity: 1;
 }
 
+/* ---------- explore section & arrows ---------- */
 .explore {
-  margin-top: 410px;
+  margin-top: 24px;
+  position: relative;
+  padding-bottom: 2rem;
+}
+.explore-scroll {
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.explore-scroll::-webkit-scrollbar {
+  display: none;
 }
 
-.explore-scroll {
+.explore-left-arrow,
+.explore-right-arrow {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  z-index: 30;
+}
+.explore-left-arrow {
+  left: 8px;
+}
+.explore-right-arrow {
+  right: 8px;
+}
+
+/* make card images consistent */
+.cards .card img {
+  object-fit: cover;
+  height: 140px;
+  width: 220px;
+}
+
+/* small helpers */
+.list-icon {
+  cursor: pointer;
 }

@@ -1,27 +1,54 @@
-let listIcon = document.querySelector(".list-icon");
-let sideBar = document.querySelector(".sidebar");
-let underlay = document.querySelector(".underlay");
-let images = document.querySelectorAll(".hero-images");
+const listIcon = document.getElementById("listIcon");
+const sideBar = document.getElementById("sidebar");
+const underlay = document.getElementById("underlay");
 
+const images = document.querySelectorAll(".hero-images");
+const exploreRight = document.querySelector(".explore-right-arrow");
+const exploreLeft = document.querySelector(".explore-left-arrow");
+const exploreScroll = document.querySelector(".explore-scroll");
+
+// ---- sidebar toggle ----
 listIcon.addEventListener("click", () => {
-  underlay.style.visibility = "visible";
-  sideBar.style.transform = "translateX(0)";
+  underlay.classList.add("show");
+  sideBar.classList.add("open");
 });
 
-underlay.addEventListener("click", () => {
-  underlay.style.visibility = "hidden";
-  sideBar.style.transform = "translateX(-100%)";
-});
-
-let num = 0;
-setInterval(() => {
-  if (num > images.length - 1) {
-    num = 0;
+// click outside sidebar (on underlay) closes it
+underlay.addEventListener("click", (e) => {
+  // ensure we clicked the underlay itself, not the sidebar
+  if (e.target === underlay) {
+    underlay.classList.remove("show");
+    sideBar.classList.remove("open");
   }
+});
 
-  images.forEach((items, index) => {
-    items.style.opacity = "0";
-  });
-  images[num].style.opacity = "1";
-  num++;
+// ---- hero slider (simple fade) ----
+let idx = 0;
+// ensure first is active
+images.forEach((img) => img.classList.remove("active"));
+if (images.length) images[0].classList.add("active");
+
+setInterval(() => {
+  images[idx].classList.remove("active");
+  idx = (idx + 1) % images.length;
+  images[idx].classList.add("active");
 }, 3000);
+
+// ---- explore scroll arrows ----
+exploreRight.addEventListener("click", () => {
+  if (!exploreScroll) return;
+  exploreScroll.scrollBy({ left: 300, behavior: "smooth" });
+});
+
+exploreLeft.addEventListener("click", () => {
+  if (!exploreScroll) return;
+  exploreScroll.scrollBy({ left: -300, behavior: "smooth" });
+});
+
+// keyboard optional: arrow keys to scroll the explore section
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight")
+    exploreScroll && exploreScroll.scrollBy({ left: 200, behavior: "smooth" });
+  if (e.key === "ArrowLeft")
+    exploreScroll && exploreScroll.scrollBy({ left: -200, behavior: "smooth" });
+});
